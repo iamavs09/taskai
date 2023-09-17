@@ -15,10 +15,10 @@ const App = () => {
       <BrowserRouter basename="/taskai/" >
         <Navbar />
         <Routes>
-          <Route path="/taskai/" element={<Home />} />
-          <Route path="/taskai/about" element={<About />} />
-          <Route path="/taskai/contact" element={<Contact />} />
-          <Route path="/taskai/services" element={<Services />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Services />} />
         </Routes>
         <Footer />
       </BrowserRouter>
