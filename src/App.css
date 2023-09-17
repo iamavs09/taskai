@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+*{ 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.navlinks_container{
+  display: none; 
+}
+nav{
+  display: flex;
+  padding: 10px 20px;
+  justify-content: start;
+  align-items: center;
+  gap:33%;
+}
+
+.hamburger {
+  width: 20px;
+  z-index: 3;
+  transition: transform 0.3s ease; 
+}
+
+.hamburger.cross {
+  transform: rotate(90deg); 
+}
+
+.side_bar {
+  color: white;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  background-image: linear-gradient(-46deg, #0826ca 0%, #0070d9 52%, #14d0ff 100%);
+  padding-top: 60px;
+  z-index: 2;
+  transition: left 0.5s ease-in-out;
+}
+.side_bar_links{
+  padding: 20px;
+}
+.side_bar_links li{
+  font-size: 20px;
+}
+.side_bar.show {
+  left: 0;
+}
+
+.side_bar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+} 
+.title{
+  font-weight: 400;
+  font-size: 2.5em;
+}
+.hero{
+  display: flex;
+  padding: 30px 15px;
+  background-color: #F8F9FB 
+}
+.card_container{
+  margin-top: 30px;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  padding: 10px;
+  font-weight: 400;
+  gap: 15px;
+  animation-name: motion;
+  animation: motion 2s;
+}
+.card img{
+  width: 100%;
+  height: 70%;
+}
+.card p{
+  line-height: 25px;
+}
+
+.description_section{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-image: linear-gradient(-46deg, #0826ca 0%, #0070d9 52%, #14d0ff 100%);
+  color: white;
+  font-size: 24px;
+  padding: 20px;
+}
+.description_section_title{
+  font-size: 36px;
+  font-weight: 400;
+}
+.information_container{
+  animation-name: motion;
+  animation: motion 2s;
+}
+.video_wrapper{
+  animation-name: motion;
+  animation: motion 2s;
+}
+
+video{
+  max-width: 100%;
+}
+.footer{
+  padding: 20px;
+  background-color: #0a0a0a;
+  color: white;
+}
+.footer_links_container{
+  display: flex; 
+  flex-wrap: wrap;
+}
+.input_box{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid white;
+  height: fit-content;
+}
+.input_box input{
+  text-align: center;
+  all: unset;
+}
+.email_submit_btn{
+  all: unset;
+}
+
+
+@media (min-width:768px){
+  .title{
+    max-width: 70%;
+  }
+  .hamburger{
+    display: none;
+  }
+  .navlinks_container{
+    display: flex; 
+  }
+  .nav_links{
+    display: flex;
+    gap: 10px;
+  }
+  nav{
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  li{
+    position: relative;
+    cursor: pointer;
+    
+}
+  li::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #0070d9 ;
+    transform: scaleX(0);
+    transition: transform .4s;
+}
+  li:hover::after{
+    transform: scaleX(1);
+}
+  .side_bar {
+    display: none;
+  }
+  
+  
+  .card_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 60px;
+  }
+  .card img{
+    width: 100%;
+    height: 250px;
+  }
+  .hero{
+    gap: 60px;
+    padding: 40px 25px;
+    padding-left: 60px;
+    background-color: #F8F9FB 
+  }
+  
+  .description_section_title{
+    font-size: 40px;
+    font-weight: 400;
+  }
+  
+  
+  .email_container{
+    display: flex;
+    gap: 60px;
+    border-bottom: none;
+  }
+  .email_container input{
+    text-align: center;
+  }
+  .footer{
+    padding: 50px 100px;
+    background-color: #0a0a0a;
+    color: white;
+  }
+  .input_box{
+    margin-left: 100px;
+  }
+}
+@media (min-width:992px){
+  .title{
+    max-width: 50%;
+  }
+  .card img{
+    width: 100%;
+    height: 300px;
+  }
+  .description_section{
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  
+  
+}
+
+@media (min-width:1200px){
+  
+  .hero{
+    max-width: 1200px;
+    margin: 0 auto;
+  }  
+}
+
+
+@keyframes motion{
+  0%{
+      transform: translateX(-100%);
+  }
+  100%{
+      transform: translateX(0);
+  }
+}
